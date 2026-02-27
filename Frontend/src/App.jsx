@@ -5,6 +5,10 @@ import Header from "./components/layout/Header";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 
+import AdminLogin from "./pages/admin/AdminLogin";
+import AdminDashboard from "./pages/admin/AdminDashboard";
+import ProtectedRoute from "./components/admin/ProtectedRoute";
+
 import Home from "./pages/Home";
 import SimplePage from "./pages/SimplePage";
 
@@ -30,8 +34,16 @@ export default function App() {
           <Route path="/quienes-somos" element={<SimplePage title="Quiénes somos" />} />
           <Route path="/contactanos" element={<SimplePage title="Contáctanos" />} />
 
-          {/* Login admin (zona privada la haremos después) */}
-          <Route path="/admin" element={<SimplePage title="Acceso Administrador" />} />
+          <Route path="/admin" element={<AdminLogin />} />
+
+<Route
+  path="/admin/dashboard"
+  element={
+    <ProtectedRoute>
+      <AdminDashboard />
+    </ProtectedRoute>
+  }
+/>
         </Routes>
       </main>
 

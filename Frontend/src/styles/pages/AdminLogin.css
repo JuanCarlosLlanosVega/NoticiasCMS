@@ -1,0 +1,93 @@
+.adminLogin{
+    padding: 16px 0 26px;
+  }
+  
+  .adminLogin__container{
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 0 12px; /* margen lateral en móvil */
+  }
+  
+  .adminLogin__card{
+    background: #fff;
+    border: 1px solid var(--gray-200);
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 6px 18px rgba(0,0,0,.06);
+  }
+  
+  .adminLogin__title{
+    margin: 0;
+    font-weight: 900;
+    font-size: 22px;
+    line-height: 1.15;
+  }
+  
+  .adminLogin__desc{
+    margin: 8px 0 0;
+    font-size: 13px;
+    color: #666;
+  }
+  
+  .adminLogin__form{
+    margin-top: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .adminLogin__label{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 800;
+    color: #333;
+  }
+  
+  .adminLogin__input{
+    width: 100%;
+    border: 1px solid var(--gray-200);
+    border-radius: 10px;
+    padding: 10px 12px;
+    font-size: 14px;
+    outline: none;
+    background: #fff;
+  }
+  
+  .adminLogin__input:focus{
+    border-color: rgba(0,0,0,.35);
+  }
+  
+  .adminLogin__btn{
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 12px;
+    font-weight: 900;
+    cursor: pointer;
+    background: var(--accent);
+    color: #111;
+  }
+  
+  .adminLogin__btn:hover{
+    background: var(--accent-2);
+  }
+  
+  .adminLogin__hint{
+    margin: 2px 0 0;
+    font-size: 12px;
+    color: #777;
+    line-height: 1.35;
+  }
+  
+  /* Desktop/tablet */
+  @media (min-width: 640px){
+    .adminLogin__card{
+      padding: 18px;
+    }
+    .adminLogin__title{
+      font-size: 24px;
+    }
+  }
