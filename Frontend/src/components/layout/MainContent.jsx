@@ -8,26 +8,28 @@ export default function MainContent() {
     () => [
       {
         title:
-          "SALA PLENA DEL TSJ INSTRUYE CELERIDAD EN LOS PROCESOS CON VÍCTIMAS...",
-        subtitle: "Mujeres, niños, niñas, adolescentes o adultos mayores",
+          "CONVOCATORIA PÚBLICA PARA DEFENSORES PÚBLICOS SEPDEP",
+        subtitle: "Para abogados registrados en R.P.A. -  Descarga los formularios y requisitos",
         image:
-          "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=60",
+          "https://sepdep.gob.bo/wp-content/uploads/2025/07/517033863_1095264146037564_8496179364288916488_n.jpg",
       },
       {
-        title: "CONVOCATORIAS ABIERTAS - GESTIÓN 2026",
-        subtitle: "Descarga los formularios y requisitos",
+        title:
+         "COOPERACIÓN INTERINSTITUCIONAL DE RÉGIMEN PENITENCIARIO",
+        subtitle: "Juzgados de Ejecución Penal y Régimen Penitenciario",
         image:
-          "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1600&q=60",
+          "https://www.defensoria.gob.bo/uploads/images/3ac0f4406a2f5d721aa220a9fd65b89c.jpeg",
       },
       {
-        title: "NORMAS Y LEYES ACTUALIZADAS",
-        subtitle: "Accede a PDFs oficiales y resoluciones",
+        title: "CRONOGRAMA DE LA VACACIÓN JUDICIAL",
+        subtitle: "Accede y descarga el documento pdf",
         image:
-          "https://images.unsplash.com/photo-1528747045269-390fe33c19a3?auto=format&fit=crop&w=1600&q=60",
+          "https://pxcdn.reduno.com.bo/reduno/112025/1763126578721.webp?cw=800&ch=450&extw=jpg",
       },
     ],
     []
   );
+
 
   const [idx, setIdx] = useState(0);
   const current = slides[idx];
@@ -71,8 +73,8 @@ export default function MainContent() {
             <div className="cardLink__row">
               <div className="cardLink__icon" />
               <div>
-                <p className="cardLink__title">Seguimiento de Causas</p>
-                <p className="cardLink__subtitle">Consulta el estado de tu proceso</p>
+                <p className="cardLink__title">Biblioteca Normativa 2026</p>
+                <p className="cardLink__subtitle">Descarga las normativas</p>
               </div>
             </div>
           </Link>
@@ -81,11 +83,25 @@ export default function MainContent() {
             <div className="cardLink__row">
               <div className="cardLink__icon" />
               <div>
-                <p className="cardLink__title">Génesis - Buscador</p>
-                <p className="cardLink__subtitle">Encuentra documentos y normativa</p>
+                <p className="cardLink__title"> Convocatorias Públicas</p>
+                <p className="cardLink__subtitle">Descarga los formularios</p>
               </div>
             </div>
           </Link>
+
+          <div className="videoCard">
+  <h3 className="videoCard__title">Tribunal Suprema de Justicia ¿quienes somos?</h3>
+
+  <div className="videoCard__frame">
+    <iframe
+      src="https://youtu.be/chbyN1Dn7Ls?si=DRz2HT4qIq-k9aSB"
+      title="¿Quiénes somos?"
+      frameBorder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowFullScreen
+    />
+  </div>
+</div>
 
           <div className="denuncia">
             <p style={{ margin: 0, fontWeight: 800 }}>
@@ -105,21 +121,19 @@ export default function MainContent() {
         </aside>
       </section>
 
+
+
       <section className="miniGrid">
         <Link to="/publicaciones" className="miniCard">
           <p className="miniCard__title">Noticias</p>
-          <p className="miniCard__desc">Últimos comunicados y avisos</p>
+          <p className="miniCard__desc">Noticias destacadas Jurídicas</p>
         </Link>
 
         <Link to="/publicaciones" className="miniCard">
-          <p className="miniCard__title">Convocatorias</p>
-          <p className="miniCard__desc">Descarga DOCX/PDF de convocatorias</p>
+          <p className="miniCard__title">Avisos y Comunicados</p>
+          <p className="miniCard__desc">Para la comunidad Judicial</p>
         </Link>
 
-        <Link to="/normas-y-leyes" className="miniCard">
-          <p className="miniCard__title">Leyes PDF</p>
-          <p className="miniCard__desc">Repositorio de normativa descargable</p>
-        </Link>
       </section>
     </>
   );
