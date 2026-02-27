@@ -1,0 +1,178 @@
+.mainGrid{
+    display:grid;
+    grid-template-columns: 1fr;
+    gap:14px;
+    margin-top: 14px;
+  }
+  
+  @media (min-width: 1024px){
+    .mainGrid{
+      grid-template-columns: 2fr 1fr;
+      gap:16px;
+    }
+  }
+  
+  .carousel{
+    position:relative;
+    border:1px solid var(--gray-200);
+    border-radius:10px;
+    overflow:hidden;
+    background:#f3f3f3;
+  }
+  
+  .carousel__img{
+    height: 240px;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  @media (min-width: 640px){
+    .carousel__img{ height: 340px; }
+  }
+  @media (min-width: 768px){
+    .carousel__img{ height: 400px; }
+  }
+  
+  .carousel__overlay{
+    position:absolute;
+    left:0; right:0; bottom:0;
+    padding:14px;
+    background: linear-gradient(to top, rgba(0,0,0,.78), rgba(0,0,0,.2), transparent);
+    color:#fff;
+  }
+  
+  .carousel__title{
+    margin:0;
+    font-weight:900;
+    text-transform: uppercase;
+    font-size: 16px;
+  }
+  @media (min-width: 640px){
+    .carousel__title{ font-size: 18px; }
+  }
+  @media (min-width: 768px){
+    .carousel__title{ font-size: 20px; }
+  }
+  
+  .carousel__subtitle{
+    margin:6px 0 0;
+    font-size: 13px;
+    opacity:.95;
+  }
+  
+  .carousel__arrow{
+    position:absolute;
+    top:50%;
+    transform: translateY(-50%);
+    width:34px; height:34px;
+    border-radius:999px;
+    border:none;
+    background: rgba(0,0,0,.55);
+    color:#fff;
+    cursor:pointer;
+    font-size: 22px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .carousel__arrow:hover{ background: rgba(0,0,0,.75); }
+  .carousel__arrow--left{ left:10px; }
+  .carousel__arrow--right{ right:10px; }
+  
+  .carousel__dots{
+    position:absolute;
+    left:0; right:0; bottom:10px;
+    display:flex;
+    justify-content:center;
+    gap:8px;
+  }
+  .carousel__dot{
+    width:10px; height:10px;
+    border-radius:999px;
+    border:1px solid rgba(255,255,255,.8);
+    background: rgba(255,255,255,.35);
+    cursor:pointer;
+  }
+  .carousel__dot--active{
+    background:#fff;
+  }
+  
+  .side{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  
+  .cardLink{
+    border:1px solid var(--gray-200);
+    border-radius:10px;
+    background:#fff;
+    padding:12px;
+    transition: background .15s ease;
+  }
+  .cardLink:hover{ background:#f7f7f7; text-decoration:none; }
+  
+  .cardLink__row{
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+  }
+  .cardLink__icon{
+    width:44px; height:44px;
+    border-radius:8px;
+    background:#eaeaea;
+    border:1px solid var(--gray-200);
+    flex:0 0 auto;
+  }
+  .cardLink__title{
+    margin:0;
+    font-weight:900;
+    font-size:14px;
+  }
+  .cardLink__subtitle{
+    margin:4px 0 0;
+    font-size:13px;
+    color:#555;
+  }
+  
+  .denuncia{
+    border:1px solid var(--gray-200);
+    border-radius:10px;
+    background:#fff;
+    padding:12px;
+  }
+  
+  .denuncia__btn{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: var(--accent);
+    color:#111;
+    border:none;
+    border-radius:8px;
+    padding:10px 12px;
+    font-weight:900;
+    cursor:pointer;
+  }
+  .denuncia__btn:hover{ background: var(--accent-2); }
+  
+  .miniGrid{
+    margin-top: 14px;
+    display:grid;
+    grid-template-columns: 1fr;
+    gap:12px;
+  }
+  
+  @media (min-width: 768px){
+    .miniGrid{ grid-template-columns: repeat(3, 1fr); }
+  }
+  
+  .miniCard{
+    border:1px solid var(--gray-200);
+    border-radius:10px;
+    background:#fff;
+    padding:14px;
+  }
+  .miniCard:hover{ background:#f7f7f7; text-decoration:none; }
+  .miniCard__title{ margin:0; font-weight:900; }
+  .miniCard__desc{ margin:6px 0 0; font-size:13px; color:#555; }

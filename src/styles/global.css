@@ -1,0 +1,38 @@
+:root{
+    --maxw: 1100px;
+    --gray-900:#111;
+    --gray-800:#2f2f2f;
+    --gray-700:#3b3b3b;
+    --gray-200:#e5e5e5;
+    --accent:#f2c200; /* amarillo modelo */
+    --accent-2:#ffd44d;
+    --white:#fff;
+  }
+  
+  *{ box-sizing:border-box; }
+  html,body{ height:100%; }
+  body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--gray-900);
+    background:#fff;
+  }
+  
+  a{ color:inherit; text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  
+  .container{
+    width:100%;
+    max-width: var(--maxw);
+    margin:0 auto;
+    padding: 0 12px;
+  }
+  
+  @media (min-width: 640px){
+    .container{ padding: 0 16px; }
+  }
+  @media (min-width: 1024px){
+    .container{ padding: 0 20px; }
+  }
+
+ 

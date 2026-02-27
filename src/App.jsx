@@ -1,17 +1,4 @@
-/*
-function App() {
-  return (
-    <div className="text-center mt-10">
-      <h1 className="text-4xl font-bold text-blue-600">¡Ya funciona con Tailwind! 🎉</h1>
-      <button className="mt-6 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">
-        Probar botón
-      </button>
-    </div>
-  );
-}
 
-export default App;
-*/
 
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/layout/Header";

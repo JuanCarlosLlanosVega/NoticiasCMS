@@ -1,7 +1,7 @@
 
-
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
+import "../../styles/components/Navbar.css";
 
 const navItems = [
   { label: "Institución", to: "/institucion" },
@@ -18,33 +18,25 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="bg-slate-700 text-white">
-      <div className="mx-auto w-full max-w-6xl px-3 sm:px-4 lg:px-6">
-        {/* barra */}
-        <div className="flex items-center justify-between py-2">
-          <span className="text-sm font-semibold md:hidden">Navegación</span>
-
+    <nav className="navbar">
+      <div className="container">
+        <div className="navbar__bar">
+          <span className="navbar__label">Navegación</span>
           <button
             type="button"
-            className="md:hidden rounded border border-white/30 px-3 py-1 text-sm"
+            className="navbar__toggle"
             onClick={() => setOpen((v) => !v)}
-            aria-expanded={open}
-            aria-controls="navmenu"
           >
             {open ? "Cerrar" : "Abrir"}
           </button>
 
-          {/* Desktop */}
-          <div className="hidden md:flex w-full items-center gap-1 overflow-x-auto">
+          <div className="navbar__links">
             {navItems.map((item) => (
               <NavLink
                 key={item.to}
                 to={item.to}
                 className={({ isActive }) =>
-                  [
-                    "whitespace-nowrap px-3 py-2 text-sm font-medium hover:bg-slate-600",
-                    isActive ? "bg-slate-600" : "",
-                  ].join(" ")
+                  `navbar__link ${isActive ? "navbar__link--active" : ""}`
                 }
               >
                 {item.label}
@@ -53,26 +45,20 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Mobile menu */}
         {open && (
-          <div id="navmenu" className="md:hidden pb-3">
-            <div className="flex flex-col border-t border-white/15 pt-2">
-              {navItems.map((item) => (
-                <NavLink
-                  key={item.to}
-                  to={item.to}
-                  onClick={() => setOpen(false)}
-                  className={({ isActive }) =>
-                    [
-                      "px-2 py-2 text-sm hover:bg-slate-600 rounded",
-                      isActive ? "bg-slate-600" : "",
-                    ].join(" ")
-                  }
-                >
-                  {item.label}
-                </NavLink>
-              ))}
-            </div>
+          <div className="navbar__mobile">
+            {navItems.map((item) => (
+              <NavLink
+                key={item.to}
+                to={item.to}
+                onClick={() => setOpen(false)}
+                className={({ isActive }) =>
+                  `navbar__link ${isActive ? "navbar__link--active" : ""}`
+                }
+              >
+                {item.label}
+              </NavLink>
+            ))}
           </div>
         )}
       </div>
