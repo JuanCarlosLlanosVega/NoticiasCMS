@@ -122,7 +122,6 @@ export default function MainContent() {
       </section>
 
 
-
       <section className="miniGrid">
         <Link to="/publicaciones" className="miniCard">
           <p className="miniCard__title">Noticias</p>
@@ -135,6 +134,88 @@ export default function MainContent() {
         </Link>
 
       </section>
+      <section className="linksInterest">
+  <h2 className="linksInterest__title">ENLACES DE INTERÉS</h2>
+
+  <div className="linksInterest__grid">
+    <a
+      className="linksInterest__item"
+      href="https://tcpbolivia.bo/"
+      target="_blank"
+      rel="noreferrer"
+      title="Tribunal Constitucional Plurinacional"
+    >
+      <img
+        src="/img/enlaces/tcp.png"
+        alt="Tribunal Constitucional Plurinacional"
+      />
+      <span>Tribunal Constitucional Plurinacional</span>
+    </a>
+
+    <a
+      className="linksInterest__item"
+      href="https://www.tsj.bo/"
+      target="_blank"
+      rel="noreferrer"
+      title="Tribunal Supremo de Justicia"
+    >
+      <img src="/img/enlaces/tsj.png" alt="Tribunal Supremo de Justicia" />
+      <span>Tribunal Supremo de Justicia</span>
+    </a>
+
+    <a
+      className="linksInterest__item"
+      href="https://www.fiscalia.gob.bo/"
+      target="_blank"
+      rel="noreferrer"
+      title="Fiscalía General del Estado"
+    >
+      <img
+        src="/img/enlaces/fiscalia.png"
+        alt="Fiscalía General del Estado"
+      />
+      <span>Fiscalía General del Estado</span>
+    </a>
+
+    <a
+      className="linksInterest__item"
+      href="https://www.oep.org.bo/"
+      target="_blank"
+      rel="noreferrer"
+      title="Órgano Electoral Plurinacional"
+    >
+      <img src="/img/enlaces/oep.png" alt="Órgano Electoral Plurinacional" />
+      <span>Órgano Electoral Plurinacional</span>
+    </a>
+
+    <a
+      className="linksInterest__item"
+      href="https://www.policia.bo/"
+      target="_blank"
+      rel="noreferrer"
+      title="Policía Boliviana"
+    >
+      <img src="/img/enlaces/policia.png" alt="Policía Boliviana" />
+      <span>Policía Boliviana</span>
+    </a>
+
+    <a
+      className="linksInterest__item"
+      href="https://www.procuraduria.gob.bo/"
+      target="_blank"
+      rel="noreferrer"
+      title="Procuraduría General del Estado"
+    >
+      <img
+        src="/img/enlaces/procuraduria.png"
+        alt="Procuraduría General del Estado"
+      />
+      <span>Procuraduría General del Estado</span>
+    </a>
+  </div>
+</section>
+
+
     </>
   );
 }
