@@ -167,7 +167,7 @@
 
       /* Reducir tamaño del título */
       .header__title{
-        font-size: 18px;          
+        font-size: 18px;          /* antes 22px */
         line-height: 1.2;
         letter-spacing: 0.5px;
       }
@@ -180,11 +180,10 @@
     
       /* Evitar que el botón se esconda */
       .header__mobileBtn{
-        flex-shrink: 0;   
+        flex-shrink: 0;   /* 🔥 CLAVE: evita que se comprima */
       }
-
       .header__mobileBtn{
-        margin-right: 8px;   /* 👈 mueve el botón hacia la izquierda */
-      }
+    margin-right: 12px;   /* 👈 mueve el botón hacia la izquierda */
+  }
     
     }

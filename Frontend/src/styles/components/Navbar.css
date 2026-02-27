@@ -1,64 +1,81 @@
 .navbar{
-    background: var(--gray-700);
-    color: #fff;
-    border-bottom: 3px solid var(--accent);
-  }
-  
+  background: var(--gray-700);
+  color: #fff;
+  border-bottom: 3px solid var(--accent);
+}
+
+.navbar__bar{
+  display:flex;
+  align-items:center;
+  gap: 12px;
+  padding:8px 0;
+}
+
+/*
+.navbar__label{
+  font-weight:800;
+  font-size:14px;
+  white-space: nowrap;
+}
+*/
+
+/* ✅ AHORA SIEMPRE visible */
+.navbar__links{
+  display:flex;
+  align-items:center;
+  gap:0;
+
+  /* ✅ responsive horizontal scroll */
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+
+  /* opcional: “snap” bonito */
+  scroll-snap-type: x mandatory;
+
+  /* importante para que no reviente el layout */
+  min-width: 0;
+  flex: 1;
+}
+
+.navbar__link{
+  display:inline-flex;
+  padding:10px 12px;
+  font-size:13px;
+  white-space:nowrap;
+  border-radius:2px;
+
+  /* ✅ para que no se comprima */
+  flex: 0 0 auto;
+
+  /* snap */
+  scroll-snap-align: start;
+}
+
+.navbar__link:hover{
+  background: rgba(255,255,255,.12);
+  text-decoration:none;
+}
+
+.navbar__link--active{
+  background: rgba(255,255,255,.18);
+}
+
+/* ✅ ocultar scrollbar (opcional) */
+.navbar__links::-webkit-scrollbar{
+  height: 0px;
+}
+
+/* ✅ Desktop ajustes */
+@media (min-width: 768px){
   .navbar__bar{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:8px 0;
+    justify-content: center;
   }
-  
-  .navbar__label{
-    font-weight:800;
-    font-size:14px;
-  }
-  
-  .navbar__toggle{
-    border:1px solid rgba(255,255,255,.35);
-    background: transparent;
-    color:#fff;
-    border-radius:6px;
-    padding:6px 10px;
-    cursor:pointer;
-  }
-  
+
   .navbar__links{
-    display:none;
-    gap:0;
-    overflow-x:auto;
-    scrollbar-width: thin;
+    justify-content: center; /* si quieres alineado al centro */
+    overflow: visible;       /* en desktop ya no hace falta scroll */
+    scroll-snap-type: none;
   }
-  
-  .navbar__link{
-    display:inline-flex;
-    padding:10px 12px;
-    font-size:13px;
-    white-space:nowrap;
-    border-radius:2px;
-  }
-  .navbar__link:hover{ background: rgba(255,255,255,.12); text-decoration:none; }
-  
-  .navbar__link--active{
-    background: rgba(255,255,255,.18);
-  }
-  
-  .navbar__mobile{
-    border-top:1px solid rgba(255,255,255,.12);
-    padding:10px 0 12px;
-    display:flex;
-    flex-direction:column;
-    gap:6px;
-  }
-  
-  .navbar__mobile .navbar__link{
-    padding:10px 10px;
-    border-radius:6px;
-  }
-  
-  @media (min-width: 768px){
-    .navbar__label, .navbar__toggle{ display:none; }
-    .navbar__links{ display:flex; }
-  }
+}

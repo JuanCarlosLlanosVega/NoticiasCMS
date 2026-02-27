@@ -1,6 +1,4 @@
-
 import { NavLink } from "react-router-dom";
-import { useState } from "react";
 import "../../styles/components/Navbar.css";
 
 const navItems = [
@@ -15,22 +13,13 @@ const navItems = [
 ];
 
 export default function Navbar() {
-  const [open, setOpen] = useState(false);
-
   return (
     <nav className="navbar">
       <div className="container">
         <div className="navbar__bar">
-          <span className="navbar__label">Navegación</span>
-          <button
-            type="button"
-            className="navbar__toggle"
-            onClick={() => setOpen((v) => !v)}
-          >
-            {open ? "Cerrar" : "Abrir"}
-          </button>
+          
 
-          <div className="navbar__links">
+          <div className="navbar__links" role="navigation" aria-label="Navegación principal">
             {navItems.map((item) => (
               <NavLink
                 key={item.to}
@@ -44,23 +33,6 @@ export default function Navbar() {
             ))}
           </div>
         </div>
-
-        {open && (
-          <div className="navbar__mobile">
-            {navItems.map((item) => (
-              <NavLink
-                key={item.to}
-                to={item.to}
-                onClick={() => setOpen(false)}
-                className={({ isActive }) =>
-                  `navbar__link ${isActive ? "navbar__link--active" : ""}`
-                }
-              >
-                {item.label}
-              </NavLink>
-            ))}
-          </div>
-        )}
       </div>
     </nav>
   );
