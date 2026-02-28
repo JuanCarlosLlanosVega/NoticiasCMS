@@ -1,0 +1,80 @@
+{
+    "home": {
+      "carousel": [
+        {
+          "title": "CONVOCATORIA PÚBLICA PARA DEFENSORES PÚBLICOS SEPDEP",
+          "subtitle": "Para abogados registrados en R.P.A. - Descarga los formularios y requisitos",
+          "image": "/img/enlaces/DefensaPublica.PNG",
+          "link": "/publicaciones"
+        },
+        {
+          "title": "COOPERACIÓN INTERINSTITUCIONAL DE RÉGIMEN PENITENCIARIO",
+          "subtitle": "Juzgados de Ejecución Penal y Régimen Penitenciario",
+          "image": "/img/enlaces/RegimenPenitenciario.PNG",
+          "link": "/publicaciones"
+        },
+        {
+          "title": "CRONOGRAMA DE LA VACACIÓN JUDICIAL",
+          "subtitle": "Accede y descarga el documento PDF",
+          "image": "/img/enlaces/CorteSuprema.PNG",
+          "link": "/publicaciones"
+        }
+      ],
+      "sideCards": [
+        {
+          "title": "Biblioteca Normativa 2026",
+          "subtitle": "Descarga las normativas",
+          "to": "/publicaciones",
+          "icon": "/img/cards/pdf.PNG"
+        },
+        {
+          "title": "Convocatorias Públicas",
+          "subtitle": "Descarga los formularios",
+          "to": "/normas-y-leyes",
+          "icon": "/img/cards/word.PNG"
+        }
+      ],
+      "video": {
+        "title": "Tribunal Suprema de Justicia ¿quienes somos?",
+        "embedUrl": "/img/cards/Tribunal.mp4"
+      },
+      "miniCards": [
+        {
+          "title": "Noticias",
+          "desc": "Noticias destacadas Jurídicas",
+          "to": "/publicaciones"
+        },
+        {
+          "title": "Avisos y Comunicados",
+          "desc": "Para la comunidad Judicial",
+          "to": "/publicaciones"
+        }
+      ],
+      "interestLinks": {
+        "title": "ENLACES DE INTERÉS",
+        "background": "/img/enlaces/Cocha.PNG",
+        "items": [
+          {
+            "name": "Tribunal Constitucional Plurinacional",
+            "url": "https://tcpbolivia.bo/",
+            "logo": "/img/enlaces/tconst.jpg"
+          },
+          {
+            "name": "Tribunal Supremo de Justicia",
+            "url": "https://www.tsj.bo/",
+            "logo": "/img/enlaces/tsupj.jpg"
+          },
+          {
+            "name": "Fiscalía General del Estado",
+            "url": "https://www.fiscalia.gob.bo/",
+            "logo": "/img/enlaces/fiscal.jpg"
+          },
+          {
+            "name": "Consejo de la Magistratura",
+            "url": "https://www.consejomagistratura.gob.bo/",
+            "logo": "/img/enlaces/csj.jpg"
+          }
+        ]
+      }
+    }
+  }

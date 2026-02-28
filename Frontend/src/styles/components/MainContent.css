@@ -260,12 +260,20 @@
     background: rgba(255,255,255,.12);
     text-decoration: none;
   }
-  
+  /*
   .linksInterest__item img{
     width: 64px;
     height: 64px;
     object-fit: contain;
     filter: drop-shadow(0 6px 12px rgba(0,0,0,.25));
+  }
+  */
+
+  .linksInterest__item img{
+    width: 72px;
+    height: 72px;
+    object-fit: contain;
+    display: block;
   }
   
   .linksInterest__item span{
