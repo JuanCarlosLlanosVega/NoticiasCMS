@@ -5,7 +5,8 @@ const navItems = [
   { label: "Institución", to: "/institucion" },
   { label: "Sede del Tribunal", to: "/sede-del-tribunal" },
   { label: "Tribunales Departamentales", to: "/tribunales" },
-  { label: "Biblioteca Normativa 2026", to: "/Biblioteca" },
+  /*{ label: "Biblioteca Normativa 2026", to: "/Biblioteca" },*/
+  { label: "Biblioteca Normativa 2026", to: "/biblioteca" },
   { label: "Normas y Leyes", to: "/normas-y-leyes" },
   { label: "Biblioteca", to: "/biblioteca" },
   { label: "Sentencias CIDH", to: "/sentencias-cidh" },

@@ -1,24 +1,53 @@
-const AUTH_KEY = "flatcms_admin_auth";
 
-export function loginAdmin(email) {
-  localStorage.setItem(
-    AUTH_KEY,
-    JSON.stringify({ email, ts: Date.now() })
-  );
+/*
+const TOKEN_KEY = "token";
+
+export function loginAdminWithToken(token) {
+  localStorage.setItem(TOKEN_KEY, token);
 }
 
 export function logoutAdmin() {
-  localStorage.removeItem(AUTH_KEY);
+  localStorage.removeItem(TOKEN_KEY);
+}
+
+export function getToken() {
+  return localStorage.getItem(TOKEN_KEY);
 }
 
 export function isAdminLoggedIn() {
-  return Boolean(localStorage.getItem(AUTH_KEY));
+  return Boolean(getToken());
 }
 
+// ✅ Para que AdminDashboard.jsx NO falle:
 export function getAdminSession() {
-  try {
-    return JSON.parse(localStorage.getItem(AUTH_KEY) || "null");
-  } catch {
-    return null;
-  }
+  const token = getToken();
+  if (!token) return null;
+  // No decodificamos JWT aquí (no hace falta). Solo devolvemos algo usable.
+  return { token };
+}
+  */
+
+const TOKEN_KEY = "token";
+
+export function loginAdminWithToken(token) {
+  localStorage.setItem(TOKEN_KEY, token);
+}
+
+export function logoutAdmin() {
+  localStorage.removeItem(TOKEN_KEY);
+}
+
+export function getToken() {
+  return localStorage.getItem(TOKEN_KEY);
+}
+
+export function isAdminLoggedIn() {
+  return Boolean(getToken());
+}
+
+// ✅ Compatibilidad con tu AdminDashboard.jsx
+export function getAdminSession() {
+  const token = getToken();
+  if (!token) return null;
+  return { token, email: "admin" }; // mantenemos email para que no rompa tu UI
 }

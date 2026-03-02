@@ -1,0 +1,152 @@
+
+.adminDash{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 16px;
+  }
+  
+  .adminDash__card{
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.04);
+  }
+  
+  .adminDash__top{
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  
+  .adminDash__title{
+    font-size: 20px;
+    font-weight: 900;
+    margin: 0;
+  }
+  
+  .adminDash__sub{
+    margin: 6px 0 0;
+    font-size: 13px;
+    color: #4b5563;
+  }
+  
+  .adminDash__actions{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .btn{
+    border: 1px solid #e5e7eb;
+    background: #fff;
+    padding: 10px 12px;
+    border-radius: 12px;
+    font-weight: 800;
+    cursor: pointer;
+  }
+  
+  .btn:hover{ background:#f9fafb; }
+  
+  .btnPrimary{
+    background: #111827;
+    color: #fff;
+    border-color: #111827;
+  }
+  
+  .btnPrimary:hover{ filter: brightness(1.05); }
+  
+  .alert{
+    margin-top: 12px;
+    border-radius: 12px;
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+  
+  .alertError{
+    border: 1px solid #fecaca;
+    background: #fef2f2;
+    color: #991b1b;
+  }
+  
+  .alertOk{
+    border: 1px solid #bbf7d0;
+    background: #f0fdf4;
+    color: #166534;
+  }
+  
+  .adminDash__grid2{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 14px;
+  }
+  
+  @media (min-width: 900px){
+    .adminDash__grid2{ grid-template-columns: 1fr 1fr; }
+  }
+  
+  .panel{
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 14px;
+    background: #fff;
+  }
+  
+  .panel__title{
+    margin: 0 0 10px;
+    font-weight: 900;
+  }
+  
+  .field{
+    display: grid;
+    gap: 6px;
+    margin-top: 10px;
+  }
+  
+  .field label{
+    font-size: 13px;
+    font-weight: 800;
+  }
+  
+  .input{
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 10px 12px;
+    outline: none;
+  }
+  
+  .input:focus{
+    border-color: #111827;
+    box-shadow: 0 0 0 3px rgba(17,24,39,.10);
+  }
+  
+  .navItem{
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 12px;
+    margin-top: 10px;
+    background: #fafafa;
+  }
+  
+  .navItem__row{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  @media (min-width: 680px){
+    .navItem__row{ grid-template-columns: 1fr 1fr; }
+  }
+  
+  .linkDanger{
+    margin-top: 8px;
+    color: #dc2626;
+    font-weight: 900;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }

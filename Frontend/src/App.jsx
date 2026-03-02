@@ -12,6 +12,8 @@ import ProtectedRoute from "./components/admin/ProtectedRoute";
 import Home from "./pages/Home";
 import SimplePage from "./pages/SimplePage";
 
+
+
 export default function App() {
   return (
     <div className="min-h-dvh bg-white text-slate-900">
@@ -27,6 +29,7 @@ export default function App() {
           <Route path="/sede-del-tribunal" element={<SimplePage title="Sede del Tribunal" />} />
           <Route path="/tribunales" element={<SimplePage title="Tribunales Departamentales" />} />
           <Route path="/publicaciones" element={<SimplePage title="Publicaciones" />} />
+        
           <Route path="/normas-y-leyes" element={<SimplePage title="Normas y Leyes" />} />
           <Route path="/biblioteca" element={<SimplePage title="Biblioteca" />} />
           <Route path="/sentencias-cidh" element={<SimplePage title="Sentencias CIDH" />} />

@@ -1,17 +1,53 @@
+
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { loginAdmin } from "../../lib/auth";
 import "../../styles/pages/AdminLogin.css";
+
+const API_BASE = "http://localhost:3001";
 
 export default function AdminLogin() {
   const navigate = useNavigate();
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState(""); // usaremos username en vez de email
   const [pass, setPass] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
-    loginAdmin(email || "admin@demo.com");
-    navigate("/admin/dashboard", { replace: true });
+    setErrorMsg("");
+    setLoading(true);
+
+    try {
+      // Si el usuario deja vacío, usamos "admin"
+      const payload = {
+        username: (username || "admin").trim(),
+        password: pass
+      };
+
+      const res = await fetch(`${API_BASE}/api/login`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        setErrorMsg(data?.error || "No se pudo iniciar sesión.");
+        setLoading(false);
+        return;
+      }
+
+      // Guardar token JWT
+      localStorage.setItem("token", data.token);
+
+      // Redirigir al dashboard
+      navigate("/admin/dashboard", { replace: true });
+    } catch (err) {
+      setErrorMsg("Error de conexión con el backend (¿está corriendo en 3001?).");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -25,13 +61,13 @@ export default function AdminLogin() {
 
           <form className="adminLogin__form" onSubmit={onSubmit}>
             <label className="adminLogin__label">
-              Correo
+              Usuario
               <input
                 className="adminLogin__input"
-                type="email"
-                placeholder="admin@correo.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                type="text"
+                placeholder="admin"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
               />
             </label>
 
@@ -46,13 +82,19 @@ export default function AdminLogin() {
               />
             </label>
 
-            <button className="adminLogin__btn" type="submit">
-              Ingresar
+            <button className="adminLogin__btn" type="submit" disabled={loading}>
+              {loading ? "Ingresando..." : "Ingresar"}
             </button>
 
-            <p className="adminLogin__hint">
-              *Por ahora el acceso es libre (acepta cualquier dato). Luego lo conectamos a tu Backend.
-            </p>
+            {errorMsg ? (
+              <p className="adminLogin__hint" style={{ color: "crimson" }}>
+                {errorMsg}
+              </p>
+            ) : (
+              <p className="adminLogin__hint">
+                *Asegúrate de tener el Backend corriendo en <b>http://localhost:3001</b>.
+              </p>
+            )}
           </form>
         </div>
       </div>
