@@ -144,7 +144,30 @@ const app = express();
 
 // ✅ CORS (por ahora abierto para no bloquear deploy)
 // Luego lo restringimos a tu dominio web.app
-app.use(cors({ origin: true, credentials: true }));
+//app.use(cors({ origin: true, credentials: true }));
+
+// ✅ CORS restringido a Firebase + localhost
+const ALLOWED_ORIGINS = [
+  "http://localhost:5173",
+  "http://localhost:3000",
+  "https://noticiascms-flat.web.app",
+  "https://noticiascms-flat.firebaseapp.com",
+];
+
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (!origin) return callback(null, true); // Permite Postman / health checks
+
+      if (ALLOWED_ORIGINS.includes(origin)) {
+        return callback(null, true);
+      }
+
+      return callback(new Error("CORS bloqueado para: " + origin));
+    },
+    credentials: true,
+  })
+);
 
 app.use(express.json({ limit: "10mb" }));
 
