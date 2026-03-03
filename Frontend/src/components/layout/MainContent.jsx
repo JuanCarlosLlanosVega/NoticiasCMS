@@ -21,7 +21,7 @@ export default function MainContent() {
       .catch((e) => console.error("Error cargando content.json:", e));
   }, []);
 
-  // Si aún no carga, no renderizamos nada (puedes poner un loader si quieres)
+  
   if (!home) return null;
 
   // Datos desde JSON
@@ -31,7 +31,7 @@ export default function MainContent() {
   const miniCards = home.miniCards ?? [];
   const interestLinks = home.interestLinks ?? null;
 
-  // Evitar errores si slides está vacío
+  
   const current = slides.length > 0 ? slides[idx] : null;
 
   const prev = () => {
@@ -47,7 +47,7 @@ export default function MainContent() {
   return (
     <>
       <section className="mainGrid">
-        {/* CAROUSEL */}
+      
         <div className="carousel">
           {current ? (
             <>
@@ -97,13 +97,13 @@ export default function MainContent() {
           )}
         </div>
 
-        {/* SIDE */}
+        
         <aside className="side">
-          {/* SideCards desde JSON */}
+          
           {sideCards.map((card, i) => (
             <Link key={i} className="cardLink" to={card.to}>
               <div className="cardLink__row">
-                {/* Icono: usando backgroundImage (tu CSS ya tiene el cuadrito) */}
+                
                 <div
                   className="cardLink__icon"
                   style={{
@@ -121,7 +121,7 @@ export default function MainContent() {
             </Link>
           ))}
 
-          {/* VIDEO: si es mp4 local */}
+         
           {video?.embedUrl ? (
             <div className="videoCard">
               <h3 className="videoCard__title">{video.title}</h3>
@@ -135,7 +135,7 @@ export default function MainContent() {
             </div>
           ) : null}
 
-          {/* DENUNCIA (lo mantengo igual porque no está en tu JSON) */}
+          
           <div className="denuncia">
             <p style={{ margin: 0, fontWeight: 800 }}>
               ¿Quieres denunciar actos de corrupción?
@@ -156,7 +156,7 @@ export default function MainContent() {
         </aside>
       </section>
 
-      {/* MINI CARDS desde JSON */}
+      
       <section className="miniGrid">
         {miniCards.map((c, i) => (
           <Link key={i} to={c.to} className="miniCard">
@@ -166,7 +166,7 @@ export default function MainContent() {
         ))}
       </section>
 
-      {/* ENLACES DE INTERÉS desde JSON */}
+      
 {interestLinks ? (
   <section className="linksInterest">
     <h2 className="linksInterest__title">{interestLinks.title}</h2>

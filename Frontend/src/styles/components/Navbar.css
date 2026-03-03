@@ -19,13 +19,13 @@
 }
 */
 
-/* ✅ AHORA SIEMPRE visible */
+
 .navbar__links{
   display:flex;
   align-items:center;
   gap:0;
 
-  /* ✅ responsive horizontal scroll */
+ 
   flex-wrap: nowrap;
   overflow-x: auto;
   overflow-y: hidden;
@@ -46,10 +46,10 @@
   white-space:nowrap;
   border-radius:2px;
 
-  /* ✅ para que no se comprima */
+ 
   flex: 0 0 auto;
 
-  /* snap */
+  
   scroll-snap-align: start;
 }
 
@@ -62,20 +62,20 @@
   background: rgba(255,255,255,.18);
 }
 
-/* ✅ ocultar scrollbar (opcional) */
+
 .navbar__links::-webkit-scrollbar{
   height: 0px;
 }
 
-/* ✅ Desktop ajustes */
+
 @media (min-width: 768px){
   .navbar__bar{
     justify-content: center;
   }
 
   .navbar__links{
-    justify-content: center; /* si quieres alineado al centro */
-    overflow: visible;       /* en desktop ya no hace falta scroll */
+    justify-content: center; 
+    overflow: visible;       
     scroll-snap-type: none;
   }
 }

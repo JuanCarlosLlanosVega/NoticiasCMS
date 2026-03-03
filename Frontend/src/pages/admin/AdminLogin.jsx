@@ -8,7 +8,7 @@ const API_BASE = import.meta.env.VITE_API_URL;
 
 export default function AdminLogin() {
   const navigate = useNavigate();
-  const [username, setUsername] = useState(""); // usaremos username en vez de email
+  const [username, setUsername] = useState(""); 
   const [pass, setPass] = useState("");
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
@@ -19,7 +19,7 @@ export default function AdminLogin() {
     setLoading(true);
 
     try {
-      // Si el usuario deja vacío, usamos "admin"
+      
       const payload = {
         username: (username || "admin").trim(),
         password: pass
@@ -39,10 +39,10 @@ export default function AdminLogin() {
         return;
       }
 
-      // Guardar token JWT
+      
       localStorage.setItem("token", data.token);
 
-      // Redirigir al dashboard
+      
       navigate("/admin/dashboard", { replace: true });
     } catch (err) {
       setErrorMsg("Error de conexión con el backend (¿está corriendo en 3001?).");

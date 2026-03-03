@@ -9,7 +9,7 @@ export default function Header() {
   const closeMenu = () => setOpenTopMenu(false);
   const toggleMenu = () => setOpenTopMenu((v) => !v);
 
-  // Cerrar al hacer click fuera del panel + ESC
+  
   useEffect(() => {
     if (!openTopMenu) return;
 
@@ -32,7 +32,7 @@ export default function Header() {
     };
   }, [openTopMenu]);
 
-  // (Opcional) bloquear scroll cuando el menú está abierto
+  
   useEffect(() => {
     if (!openTopMenu) return;
     const prev = document.body.style.overflow;
@@ -53,7 +53,7 @@ export default function Header() {
             <div className="header__line" />
           </div>
 
-          {/* Desktop: links + botón menú */}
+          
           <div className="header__topLinks">
             <Link to="/quienes-somos">Quienes somos</Link>
             <Link to="/contactanos">Contáctanos</Link>
@@ -69,7 +69,7 @@ export default function Header() {
             </button>
           </div>
 
-          {/* Mobile: solo botón */}
+          
           <button
             type="button"
             className="header__btn header__mobileBtn"
@@ -82,7 +82,7 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Overlay + Drawer (sirve en desktop y mobile) */}
+      
       {openTopMenu && (
         <div className="header__overlay" aria-hidden={!openTopMenu}>
           <aside

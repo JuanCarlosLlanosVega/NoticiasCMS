@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="container">
         <div className="footerX__grid">
 
-          {/* Columna 2: Buscador + redes */}
+          
           <div className="footerX__col">
             <h4 className="footerX__subtitle">Buscar en el sitio</h4>
 
@@ -50,7 +50,7 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Columna 3: Links */}
+         
           <div className="footerX__col">
             <h4 className="footerX__subtitle">Enlaces</h4>
 
@@ -67,7 +67,7 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Barra inferior */}
+      
       <div className="footerX__bottom">
         <div className="container footerX__bottomRow">
           <span>© {year} Portal Jurídico Cochabamba. JUAN CARLOS LLANOS VEGA.</span>

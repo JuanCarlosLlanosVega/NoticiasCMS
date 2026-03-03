@@ -6,7 +6,7 @@
     width: 100%;
     max-width: 520px;
     margin: 0 auto;
-    padding: 0 12px; /* margen lateral en móvil */
+    padding: 0 12px; 
   }
   
   .adminLogin__card{
@@ -82,7 +82,7 @@
     line-height: 1.35;
   }
   
-  /* Desktop/tablet */
+  
   @media (min-width: 640px){
     .adminLogin__card{
       padding: 18px;
