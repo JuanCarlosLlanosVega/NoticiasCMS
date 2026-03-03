@@ -3,7 +3,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../styles/pages/AdminLogin.css";
 
-const API_BASE = "http://localhost:3001";
+//const API_BASE = "http://localhost:3001";
+const API_BASE = import.meta.env.VITE_API_URL;
 
 export default function AdminLogin() {
   const navigate = useNavigate();
@@ -92,7 +93,9 @@ export default function AdminLogin() {
               </p>
             ) : (
               <p className="adminLogin__hint">
-                *Asegúrate de tener el Backend corriendo en <b>http://localhost:3001</b>.
+                <p>
+  Verifica que el servidor del Backend esté funcionando correctamente.
+</p>
               </p>
             )}
           </form>

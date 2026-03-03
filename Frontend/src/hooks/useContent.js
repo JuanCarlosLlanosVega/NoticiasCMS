@@ -8,7 +8,10 @@ export default function useContent() {
   useEffect(() => {
     let alive = true;
 
-    fetch("http://localhost:3001/api/content")
+    const API_BASE = import.meta.env.VITE_API_URL;
+
+fetch(`${API_BASE}/api/content`)
+    
       .then((r) => {
         if (!r.ok) throw new Error(`HTTP ${r.status}`);
         return r.json();
